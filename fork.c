@@ -32,6 +32,9 @@ int main() {
             buffer[bytes] = '\0';
             printf("Child received: %s\n", buffer);
         }
+
+	// Keep the child alive for inspection
+	sleep(10);
         close(pipefd[0]);
     } else {
         // Parent Process
